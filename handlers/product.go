@@ -7,6 +7,7 @@ import (
 	"dumbmerch/repositories"
 	"fmt"
 	"net/http"
+	"os"
 	"strconv"
 
 	"github.com/go-playground/validator/v10"
@@ -14,7 +15,7 @@ import (
 	"github.com/labstack/echo"
 )
 
-var path_file = "http://localhost:5000/uploads/"
+var path_file = os.Getenv("PATH_FILE")
 
 type handlerProduct struct {
 	ProductRepository repositories.ProductRepository
